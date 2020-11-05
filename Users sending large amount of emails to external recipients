@@ -1,0 +1,6 @@
+sourcetype=ms:o365:reporting:messagetrace
+RecipientAddress!="*@<yourdomain.tld>" 
+| stats dc(RecipientAddress) by SenderAddress, Subject 
+| rename dc(RecipientAddress) as RecipientCount 
+| where RecipientCount >= 100 
+| sort - RecipientCount
