@@ -1,0 +1,1 @@
+index=wineventlog sourcetype="xmlwineventlog" EventCode=4660 OR EventCode=4663 | transaction session_id SubjectUserName maxspan=5s startswith=EventCode=4663 endswith=EventCode=4660 maxpause=1s | table _time EventCode name dvc session_id ProcessName SubjectUserName ObjectName
